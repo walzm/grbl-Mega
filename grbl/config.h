@@ -623,6 +623,16 @@
 #define RPM_LINE_B4 1.292705e+03
 
 /*
+solver was fed with
+n_pieces = 4 # Number of line segments used for data fit. Only 1 to 4 line segments supported.
+PWM_set = np.array([1,20,40,60,80,100,120,140,160,180,200,220,240,255], dtype=float)
+RPM_measured = np.array([6072,9024,10500,11976,13416,14874,16314,17772,19212,20616,22074,23514,24000,24000,], dtype=float)
+PWM_point1 = 20.0 # (S) Point between segments 0 and 1. Used when n_pieces >= 2.
+PWM_point2 = 120.0  # (S) Point between segments 1 and 2. Used when n_pieces >= 3.
+PWM_point3 = 220.0  # (S) Point between segments 2 and 3. Used when n_pieces = 4.
+*/
+
+/*
 [To operate over full model range, manually write these]
 ['$' settings or alter values in defaults.h. Grbl will]
 [operate between min($30,RPM_MAX) and max($31,RPM_MIN)]
