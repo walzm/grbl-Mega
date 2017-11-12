@@ -608,28 +608,28 @@
 // is enabled. Make sure the constant values are exactly the same as the script solution.
 // NOTE: When N_PIECES < 4, unused RPM_LINE and RPM_POINT defines are not required and omitted.
 #define N_PIECES 4
-#define RPM_MAX 24084.9
+#define RPM_MAX 24086.2
 #define RPM_MIN 6072.0
-#define RPM_POINT12 9042.6
-#define RPM_POINT23 16321.5
-#define RPM_POINT34 23540.2
-#define RPM_LINE_A1 6.396103e-03
-#define RPM_LINE_B1 3.783714e+01
-#define RPM_LINE_A2 1.373833e-02
-#define RPM_LINE_B2 1.042297e+02
-#define RPM_LINE_A3 1.385279e-02
-#define RPM_LINE_B3 1.060979e+02
-#define RPM_LINE_A4 6.426042e-02
-#define RPM_LINE_B4 1.292705e+03
+#define RPM_POINT12 9042.8
+#define RPM_POINT23 16320.8
+#define RPM_POINT34 23542.9
+#define RPM_LINE_A1 2.659208e-02
+#define RPM_LINE_B1 1.604671e+02
+#define RPM_LINE_A2 5.496041e-02
+#define RPM_LINE_B2 4.169965e+02
+#define RPM_LINE_A3 5.538537e-02
+#define RPM_LINE_B3 4.239321e+02
+#define RPM_LINE_A4 2.650240e-01
+#define RPM_LINE_B4 5.359433e+03
 
 /*
 solver was fed with
 n_pieces = 4 # Number of line segments used for data fit. Only 1 to 4 line segments supported.
-PWM_set = np.array([1,20,40,60,80,100,120,140,160,180,200,220,240,255], dtype=float)
+PWM_set = np.array([1,20*4,40*4,60*4,80*4,100*4,120*4,140*4,160*4,180*4,200*4,220*4,240*4,1024], dtype=float)
 RPM_measured = np.array([6072,9024,10500,11976,13416,14874,16314,17772,19212,20616,22074,23514,24000,24000,], dtype=float)
-PWM_point1 = 20.0 # (S) Point between segments 0 and 1. Used when n_pieces >= 2.
-PWM_point2 = 120.0  # (S) Point between segments 1 and 2. Used when n_pieces >= 3.
-PWM_point3 = 220.0  # (S) Point between segments 2 and 3. Used when n_pieces = 4.
+PWM_point1 = 20.0*4 # (S) Point between segments 0 and 1. Used when n_pieces >= 2.
+PWM_point2 = 120.0*4  # (S) Point between segments 1 and 2. Used when n_pieces >= 3.
+PWM_point3 = 220.0*4  # (S) Point between segments 2 and 3. Used when n_pieces = 4.
 */
 
 /*
