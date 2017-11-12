@@ -601,27 +601,34 @@
 // Enables a piecewise linear model of the spindle PWM/speed output. Requires a solution by the
 // 'fit_nonlinear_spindle.py' script in the /doc/script folder of the repo. See file comments 
 // on how to gather spindle data and run the script to generate a solution.
-// #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+#define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
 
 // N_PIECES, RPM_MAX, RPM_MIN, RPM_POINTxx, and RPM_LINE_XX constants are all set and given by
 // the 'fit_nonlinear_spindle.py' script solution. Used only when ENABLE_PIECEWISE_LINEAR_SPINDLE
 // is enabled. Make sure the constant values are exactly the same as the script solution.
 // NOTE: When N_PIECES < 4, unused RPM_LINE and RPM_POINT defines are not required and omitted.
-#define N_PIECES 4  // Integer (1-4). Number of piecewise lines used in script solution.
-#define RPM_MAX  11686.4  // Max RPM of model. $30 > RPM_MAX will be limited to RPM_MAX.
-#define RPM_MIN  202.5    // Min RPM of model. $31 < RPM_MIN will be limited to RPM_MIN.
-#define RPM_POINT12  6145.4  // Used N_PIECES >=2. Junction point between lines 1 and 2.
-#define RPM_POINT23  9627.8  // Used N_PIECES >=3. Junction point between lines 2 and 3.
-#define RPM_POINT34  10813.9 // Used N_PIECES = 4. Junction point between lines 3 and 4.
-#define RPM_LINE_A1  3.197101e-03  // Used N_PIECES >=1. A and B constants of line 1.
-#define RPM_LINE_B1  -3.526076e-1
-#define RPM_LINE_A2  1.722950e-2   // Used N_PIECES >=2. A and B constants of line 2.
-#define RPM_LINE_B2  8.588176e+01
-#define RPM_LINE_A3  5.901518e-02  // Used N_PIECES >=3. A and B constants of line 3.
-#define RPM_LINE_B3  4.881851e+02
-#define RPM_LINE_A4  1.203413e-01  // Used N_PIECES = 4. A and B constants of line 4.
-#define RPM_LINE_B4  1.151360e+03
+#define N_PIECES 4
+#define RPM_MAX 24084.9
+#define RPM_MIN 6072.0
+#define RPM_POINT12 9042.6
+#define RPM_POINT23 16321.5
+#define RPM_POINT34 23540.2
+#define RPM_LINE_A1 6.396103e-03
+#define RPM_LINE_B1 3.783714e+01
+#define RPM_LINE_A2 1.373833e-02
+#define RPM_LINE_B2 1.042297e+02
+#define RPM_LINE_A3 1.385279e-02
+#define RPM_LINE_B3 1.060979e+02
+#define RPM_LINE_A4 6.426042e-02
+#define RPM_LINE_B4 1.292705e+03
 
+/*
+[To operate over full model range, manually write these]
+['$' settings or alter values in defaults.h. Grbl will]
+[operate between min($30,RPM_MAX) and max($31,RPM_MIN)]
+$30=24084.9 (rpm max)
+$31=6072.0 (rpm min)
+*/
 
 /* ---------------------------------------------------------------------------------------
    OEM Single File Configuration Option
