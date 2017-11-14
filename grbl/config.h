@@ -608,36 +608,36 @@
 // is enabled. Make sure the constant values are exactly the same as the script solution.
 // NOTE: When N_PIECES < 4, unused RPM_LINE and RPM_POINT defines are not required and omitted.
 #define N_PIECES 4
-#define RPM_MAX 24086.2
-#define RPM_MIN 6072.0
-#define RPM_POINT12 9042.8
-#define RPM_POINT23 16320.8
-#define RPM_POINT34 23542.9
-#define RPM_LINE_A1 2.659208e-02
-#define RPM_LINE_B1 1.604671e+02
-#define RPM_LINE_A2 5.496041e-02
-#define RPM_LINE_B2 4.169965e+02
-#define RPM_LINE_A3 5.538537e-02
-#define RPM_LINE_B3 4.239321e+02
-#define RPM_LINE_A4 2.650240e-01
-#define RPM_LINE_B4 5.359433e+03
+#define RPM_MAX 24787.2
+#define RPM_MIN 3378.6
+#define RPM_POINT12 5037.7
+#define RPM_POINT23 6456.9
+#define RPM_POINT34 22139.5
+#define RPM_LINE_A1 5.424582e-03
+#define RPM_LINE_B1 1.732768e+01
+#define RPM_LINE_A2 4.932617e-02
+#define RPM_LINE_B2 2.384929e+02
+#define RPM_LINE_A3 4.591061e-02
+#define RPM_LINE_B3 2.164390e+02
+#define RPM_LINE_A4 8.460382e-02
+#define RPM_LINE_B4 1.073088e+03
 
 /*
 solver was fed with
 n_pieces = 4 # Number of line segments used for data fit. Only 1 to 4 line segments supported.
-PWM_set = np.array([1,20*4,40*4,60*4,80*4,100*4,120*4,140*4,160*4,180*4,200*4,220*4,240*4,1024], dtype=float)
-RPM_measured = np.array([6072,9024,10500,11976,13416,14874,16314,17772,19212,20616,22074,23514,24000,24000,], dtype=float)
-PWM_point1 = 20.0*4 # (S) Point between segments 0 and 1. Used when n_pieces >= 2.
-PWM_point2 = 120.0*4  # (S) Point between segments 1 and 2. Used when n_pieces >= 3.
-PWM_point3 = 220.0*4  # (S) Point between segments 2 and 3. Used when n_pieces = 4.
+PWM_set = np.array([1, 2, 3, 4, 8, 12, 20, 40, 60, 80, 100, 120, 200, 400, 600, 800, 900, 910, 920, 930, 1024], dtype=float)
+RPM_measured = np.array([3105, 3504, 3924, 4197, 4722, 4932, 5205, 5646, 6087, 6507, 6937, 7368, 9069, 13311, 17490, 21648, 23685, 23870, 23979, 24000, 24000], dtype=float)
+PWM_point1 = 10.0 # (S) Point between segments 0 and 1. Used when n_pieces >= 2.
+PWM_point2 = 80.0  # (S) Point between segments 1 and 2. Used when n_pieces >= 3.
+PWM_point3 = 800.0  # (S) Point between segments 2 and 3. Used when n_pieces = 4.
 */
 
 /*
 [To operate over full model range, manually write these]
 ['$' settings or alter values in defaults.h. Grbl will]
 [operate between min($30,RPM_MAX) and max($31,RPM_MIN)]
-$30=24084.9 (rpm max)
-$31=6072.0 (rpm min)
+$30=24787.2 (rpm max)
+$31=3378.6 (rpm min)
 */
 
 /* ---------------------------------------------------------------------------------------
