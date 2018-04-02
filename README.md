@@ -2,6 +2,6 @@
 
 Flash from Raspberry PI using avrdude
 
-'''
+```
 avrdude -P /dev/ttyACM0 -p m2560 -D -c stk500v2 -V -U flash:w:-:i < grblUpload.ino.mega.hex
-'''
+```
